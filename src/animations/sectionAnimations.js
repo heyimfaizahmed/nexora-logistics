@@ -468,6 +468,10 @@ export function animateStats(counterElements, rootEl) {
   if (prefersReduced) {
     gsap.set('.stat-card', { opacity: 1, y: 0 })
     gsap.set('.stats-title .gsap-line-inner', { opacity: 1, y: 0, filter: 'none' })
+    const finalValues = ['4.8', '142', '99.8', '48']
+    finalValues.forEach((value, index) => {
+      if (counterElements?.[index]) counterElements[index].textContent = value
+    })
     return
   }
 
