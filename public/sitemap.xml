@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- 
     NEXORA TRADE & LOGISTICS — PRODUCTION SITEMAP
-    Update https://DOMAIN_PLACEHOLDER with your actual live domain upon deployment.
+    NEXORA GitHub Pages production sitemap.
   -->
   <url>
-    <loc>https://DOMAIN_PLACEHOLDER/</loc>
+    <loc>https://heyimfaizahmed.github.io/nexora-logistics/</loc>
     <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>

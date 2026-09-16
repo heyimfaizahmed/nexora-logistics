@@ -4,4 +4,4 @@ Allow: /
 
 # SITEMAP SPECIFICATION
 # Note: Update placeholder DOMAIN prior to public DNS release
-Sitemap: https://DOMAIN_PLACEHOLDER/sitemap.xml
+Sitemap: https://heyimfaizahmed.github.io/nexora-logistics/sitemap.xml
