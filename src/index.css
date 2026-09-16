@@ -1,0 +1,444 @@
+/* ==========================================================================
+   NEXORA TRADE & LOGISTICS — DESIGN SYSTEM
+   Editorial, Architectural, Industrial Global Trade Foundation
+   ========================================================================== */
+
+:root {
+  /* Color System — Warm Off-White Neutral + Deep Charcoal + Industrial Vermilion */
+  --bg: #F6F5F0;
+  --bg-alt: #ECEAE1;
+  --bg-dark: #0E0F12;
+  --bg-dark-elevated: #16181D;
+  --surface: #FFFFFF;
+  
+  --charcoal: #111215;
+  --charcoal-secondary: #25272E;
+  --muted: #6E717B;
+  --muted-light: #9B9FA9;
+  --muted-dark: #838792;
+  
+  --border: #DBD7CB;
+  --border-subtle: #E8E5DC;
+  --border-dark: #22252C;
+  --border-dark-subtle: #191B20;
+
+  --accent: #E63E26;           /* International Maritime Signal Vermilion */
+  --accent-hover: #FF4D33;
+  --accent-soft: rgba(230, 62, 38, 0.08);
+  --accent-glow: rgba(230, 62, 38, 0.35);
+
+  --secondary: #938772;        /* Raw Industrial Sand / Brass */
+  --secondary-soft: rgba(147, 135, 114, 0.12);
+
+  /* Typography System */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Type Scale — Editorial Architectural Hierarchy */
+  --text-hero: clamp(4.2rem, 7.5vw, 7.5rem);
+  --text-display-1: clamp(2.5rem, 5.8vw, 5.2rem);
+  --text-display-2: clamp(1.8rem, 3.4vw, 3.6rem);
+  --text-headline: clamp(1.35rem, 2.2vw, 2.2rem);
+  --text-title: 1.25rem;
+  --text-body-lg: 1.125rem;
+  --text-body: 0.9375rem;
+  --text-body-sm: 0.825rem;
+  --text-meta-micro: 0.5625rem; /* 9px */
+  --text-meta: 0.6875rem;        /* 11px */
+  --text-meta-heavy: 0.8125rem;  /* 13px */
+
+  /* Spacing System */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  --space-40: 10rem;    /* 160px */
+
+  /* Section Spacing */
+  --section-pad-y: clamp(5rem, 9vw, 10rem);
+
+  /* Layout Widths */
+  --container-max: 1540px;
+  --container-pad: clamp(1.25rem, 4vw, 3.5rem);
+
+  /* Transitions */
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-fast: 0.25s;
+  --duration-normal: 0.45s;
+}
+
+/* ==========================================================================
+   Base Reset & Normalization
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--charcoal);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--charcoal);
+  line-height: 1.55;
+  selection-background-color: var(--accent);
+  selection-color: #FFFFFF;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+img, svg, picture {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Typography Classes
+   ========================================================================== */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.heading-hero {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.heading-display-1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-1);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.heading-display-2 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.heading-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-headline);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.tag-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tag-meta-micro {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta-micro);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tag-meta-heavy {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta-heavy);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--charcoal);
+}
+
+/* ==========================================================================
+   Architectural Layout System
+   ========================================================================== */
+
+.site-wrap {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-inline: var(--container-pad);
+}
+
+.section-pad {
+  padding-block: var(--section-pad-y);
+}
+
+.hairline-b {
+  border-bottom: 1px solid var(--border);
+}
+
+.hairline-t {
+  border-top: 1px solid var(--border);
+}
+
+.hairline-l {
+  border-left: 1px solid var(--border);
+}
+
+.hairline-r {
+  border-right: 1px solid var(--border);
+}
+
+.hairline-all {
+  border: 1px solid var(--border);
+}
+
+/* Technical Accent Badges */
+.badge-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--charcoal);
+  white-space: nowrap;
+}
+
+.badge-code.dark {
+  background: var(--bg-dark-elevated);
+  border-color: var(--border-dark);
+  color: var(--bg);
+}
+
+.badge-code .indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: inline-block;
+}
+
+/* Dark Statement Blocks */
+.theme-dark {
+  background-color: var(--bg-dark);
+  color: #F5F5F3;
+}
+
+.theme-dark .hairline-b,
+.theme-dark .hairline-t,
+.theme-dark .hairline-l,
+.theme-dark .hairline-r,
+.theme-dark .hairline-all {
+  border-color: var(--border-dark);
+}
+
+/* ==========================================================================
+   Buttons & Interactive Elements
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.05rem 2.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #FFFFFF;
+  border: 1px solid var(--accent);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.05rem 2.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--charcoal);
+  border: 1px solid var(--charcoal);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.btn-outline:hover {
+  background: var(--charcoal);
+  color: #FFFFFF;
+}
+
+.btn-outline.dark {
+  color: #FFFFFF;
+  border-color: var(--border-dark);
+}
+
+.btn-outline.dark:hover {
+  background: #FFFFFF;
+  color: var(--charcoal);
+}
+
+/* ==========================================================================
+   GSAP Animation Hooks & Prepared Wrappers
+   ========================================================================== */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.gsap-line-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+.gsap-line-inner {
+  display: block;
+  will-change: transform, opacity;
+}
+
+.gsap-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.gsap-reveal-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.gsap-reveal-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  z-index: 2;
+  transform-origin: top;
+  will-change: transform;
+}
+
+.gsap-reveal-image-overlay.dark {
+  background: var(--bg-dark);
+}
+
+.gsap-fade-up {
+  will-change: transform, opacity;
+}
+
+.gsap-counter {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   Responsive Utilities & Media Queries
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  :root {
+    --container-pad: 1.5rem;
+    --section-pad-y: 5rem;
+    --text-hero: clamp(3.2rem, 7vw, 5.5rem);
+    --text-display-1: clamp(2.2rem, 5.2vw, 4rem);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 1.25rem;
+    --section-pad-y: 4rem;
+    --text-hero: clamp(2.4rem, 9vw, 3.6rem);
+    --text-display-1: clamp(1.85rem, 6.5vw, 2.6rem);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-pad: 1rem;
+    --text-hero: clamp(2.1rem, 9.4vw, 2.8rem);
+    --text-display-1: clamp(1.7rem, 6.8vw, 2.2rem);
+  }
+}

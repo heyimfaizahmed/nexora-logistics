@@ -1,0 +1,7 @@
+# NEXORA TRADE & LOGISTICS — ROBOTS DIRECTIVES
+User-agent: *
+Allow: /
+
+# SITEMAP SPECIFICATION
+# Note: Update placeholder DOMAIN prior to public DNS release
+Sitemap: https://DOMAIN_PLACEHOLDER/sitemap.xml
